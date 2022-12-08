@@ -4,7 +4,22 @@ public class ScoreTest {
 
 	public static void main(String[] args) {
 		String name = "홍길동";
-		int kor = 100, eng = 100, mat = 100;
+		
+		// 1-100 사이의 난수 생성
+		/*
+		double Math.random(); // 0.0 <= ? < 1.0 난수 생성
+		Math.random() * 100; // 0.0 <= ? < 100.0 난수 생성
+		(int) (Math.random() * 100); // 0 <= ? <= 99 난수 생성 (int로 형변환)
+		(int) (Math.random() * 100) + 1; // 1 <= ? <= 100 난수 생성
+		
+		[템플릿]
+		(int) (Math.random() * 범위) + 시작값;
+		*/
+		
+		// 외부 입력, 동적 생성 (매번 컴파일 없이 값 수정하며 테스트 가능)
+		int kor = (int) (Math.random() * 100) + 1; // 1 - 100사이의 값 동적 생성
+		int eng = (int) (Math.random() * 100) + 1;
+		int mat = (int) (Math.random() * 100) + 1; 
 		int sum; // 총점
 		double avg; // 실수평균
 		int avgInt; // 정수평균
