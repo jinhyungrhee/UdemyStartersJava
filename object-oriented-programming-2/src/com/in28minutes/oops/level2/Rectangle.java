@@ -14,8 +14,6 @@ public class Rectangle {
 
 	// method
 	
-	//public String toString() {}
-	
 	// getter & setter
 	public int getLength() {
 		return length;
@@ -33,6 +31,19 @@ public class Rectangle {
 		this.width = width;
 	}
 	
+	// calculate area
+	public int area() {
+		return length * width;
+	}
+	
+	public int perimeter() {
+		return 2 * (length + width); 
+	}
+	
+	// 출력
+	public String toString() {
+		return String.format("length - %d, width - %d,  area - %d, perimeter - %d", length, width, area(), perimeter());
+	}
 	
 	
 	
