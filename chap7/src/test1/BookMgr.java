@@ -12,13 +12,14 @@ public class BookMgr {
 	
 	public void printBooklist() {
 		for (int i = 0; i < booklist.length; i++) {
-			System.out.println(booklist[i].getTitle());
+			Book b = booklist[i];
+			System.out.println(b.getTitle() + " : " + b.getPrice() + "원");
 		}
 	}
 	
 	public void printTotalPrice() {
 		
-		int sum = 0;
+		int sum = 0; // 지역변수 명시적 초기화 필요
 		for (int i = 0; i < booklist.length; i++) {
 			sum += booklist[i].getPrice();
 		}
