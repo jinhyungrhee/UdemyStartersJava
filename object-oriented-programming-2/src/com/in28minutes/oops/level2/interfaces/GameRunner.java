@@ -8,12 +8,18 @@ public class GameRunner {
 		//ChessGame game = new ChessGame();
 		
 		//GamingConsole game = new MarioGame();
-		GamingConsole game = new ChessGame();
+		//GamingConsole game = new ChessGame();
 		
-		game.up();
-		game.left();
-		game.down();
-		game.right();
+		// 배열로 만들어서 다양한 타입에 대한 대응이 가능해짐!
+		GamingConsole[] games = {new MarioGame(), new ChessGame()};
+		
+		for (GamingConsole game : games) {
+			game.up();
+			game.left();
+			game.down();
+			game.right();
+		}
+		
 	}
 
 }
