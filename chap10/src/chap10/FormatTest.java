@@ -31,7 +31,7 @@ public class FormatTest {
 		
 		// 양수 vs 음수
 		//DecimalFormat df = new DecimalFormat("000.00+;000.00-"); // 양수+;음수-
-		//DecimalFormat df = new DecimalFormat("###.00+;000.00-");
+		//DecimalFormat df = new DecimalFormat("###.##+;000.00-"); // 패턴 동일하게 사용!
 		
 		// 콤마 표시
 		DecimalFormat df = new DecimalFormat("###,###.00"); // 3자리마다 콤마 찍기
