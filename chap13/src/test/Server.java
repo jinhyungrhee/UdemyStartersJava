@@ -3,6 +3,7 @@ package test;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.function.Function;
 
 // 1개 서버 - 다수개 클라이언트 요청 - 처리
 class LoginClient extends Thread {
@@ -82,16 +83,30 @@ public class Server {
 
 	public static void main(String[] args) {
 		
-		LoginClient c1 = new LoginClient("java", "java");
-		LoginClient c2 = new LoginClient("java", "1234");
-		RegisterClient c3 = new RegisterClient(new Date());
-		BoardClient c4 = new BoardClient();
+//		LoginClient c1 = new LoginClient("java", "java");
+//		LoginClient c2 = new LoginClient("java", "1234");
+//		RegisterClient c3 = new RegisterClient(new Date());
+//		BoardClient c4 = new BoardClient();
+//		
+//		c1.start();
+//		c2.start();
+//		c3.start();
+//		c4.start();
 		
-		c1.start();
-		c2.start();
-		c3.start();
-		c4.start();
+		// <<람다로 만들어보기 (인터페이스 Runnable의 메서드)>>
+		//Runnable r = () -> System.out.println("람다쓰레드");
+		// (1) 리턴타입, 매개변수 없는 람다식 활용(=*Runnable*)
+		Thread c5 = new Thread(() -> { System.out.println("람다쓰레드"); } );
+		c5.start();
 		
+		// (2) 리턴타입(R), 매개변수(T) 모두 있는 람다식 활용(=*Function*)
+		Function<String, String> myDate = 
+				str ->  new SimpleDateFormat(str).format(new Date());
+		
+		// apply() - Function 인터페이스의 메서드
+		// "str ->  new SimpleDateFormat(str).format(new Date());" 이 부분이 apply()메서드로 오버라이딩 된 것!
+		String now = myDate.apply("yyyy년도 MM월 dd일");
+		System.out.println(now);
 	}
 
 }
