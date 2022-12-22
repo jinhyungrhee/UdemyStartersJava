@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		let str1 = prompt("연산할 숫자1 입력 : ");
+		let str2 = prompt("연산할 숫자2 입력 : ");
+		let op = prompt("사칙연산(+, -, *, / 중 1개 입력 가능)");
+
+		// typeof su1, su2, op --> string
+		// op -> "+"
+
+		if (window.isNaN(str1) || window.isNaN(str2)) {
+			document.write("<h3> 숫자 형태가 아닙니다. </h3>");
+		} else {
+
+			let su1 = Number(str1);
+			let su2 = Number(str2);
+
+			let result;
+			if (op == "+") {
+				result = su1 + su2;
+			} else if (op == '-') {
+				result = su1 - su2;
+			} else if (op == '*') {
+				result = su1 * su2;
+			} else if (op == '/') {
+
+				// divideByZero 예외처리
+				if (su2 != 0) {
+					result = su1 / su2;
+				} else {
+					result = "0으로 나누기 불가!";
+				}
+			}
+
+			document.write("<h3>" + su1 + op + su2 + "=" + result + "</h3>");
+
+		}
+	</script>
+
+</body>
+</html>
