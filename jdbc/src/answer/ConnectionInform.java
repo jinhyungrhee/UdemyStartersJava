@@ -1,4 +1,4 @@
-package jdbc;
+package answer;
 
 public class ConnectionInform {
 	public final static String DRIVER_CLASS = "org.mariadb.jdbc.Driver";

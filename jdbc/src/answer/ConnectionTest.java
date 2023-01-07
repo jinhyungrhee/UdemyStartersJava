@@ -1,4 +1,4 @@
-package jdbc;
+package answer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,10 +16,10 @@ public class ConnectionTest {
 		(ConnectionInform.JDBC_URL, ConnectionInform.USERNAME, ConnectionInform.PASSWORD);
 		System.out.println("연결 성공");
 		//SQL 전송 결과 검색 - SELEC * FROM EMP 예외발생 - 중단
-		con.close();
+		//con.close();
 		System.out.println("연결 해제 성공");
 		}catch(ClassNotFoundException e) {
-			System.out.println("해당 드라이버가 발견되지 않습니다.");//?????
+			System.out.println("해당 드라이버가 발견되지 않습니다.");
 		}catch(SQLException e) {
 			System.out.println("연결 정보를 확인하세요");
 		}finally {

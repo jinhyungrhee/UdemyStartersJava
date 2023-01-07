@@ -1,4 +1,4 @@
-package jdbc;
+package answer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

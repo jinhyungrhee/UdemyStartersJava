@@ -1,4 +1,4 @@
-package jdbc;
+package answer;
 //자바언어 - platform 독립적
 //jdbc 프로그램 - db 독립적
 //maria db - db 종속적 --> ????
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SelectTest4 {
+public class SelectTest4Prepared {
 	
 	public static void main(String[] args) {
 		Connection con = null;

@@ -28,14 +28,11 @@ class Student {
 	}	
 	
 	void print() throws IOException {
-
 		FileWriter fw = new FileWriter("src/test/scores.txt", true);
 		String result = name + " " + kor + " " + math + " " + eng + " " + sumScore + " " + avgScore + "\n";
 		fw.write(result);
 		fw.close();
-		
 	}
-	
 }
 
 public class Test2 {
